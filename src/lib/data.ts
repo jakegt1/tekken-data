@@ -1,6 +1,3 @@
-import lidia from "@/assets/characters/lidia.png"
-
-
 enum Sidestep {
   SSL = "SSL",
   SSR = "SSR",
@@ -41,6 +38,7 @@ const data: Tekken = {
     createCharacter("Claudio", Sidestep.SSL),
     createCharacter("Devil Jin", Sidestep.SSL, "deviljin"),
     createCharacter("Dragunov", Sidestep.SSR, "drag"),
+    createCharacter("Eddy", Sidestep.SSR),
     createCharacter("Feng", Sidestep.SSL),
     createCharacter("Hwoarang", Sidestep.SSL),
     createCharacter("Jack", Sidestep.SSL),
@@ -54,6 +52,7 @@ const data: Tekken = {
     createCharacter("Lee", Sidestep.SSL),
     createCharacter("Leo", Sidestep.SSR),
     createCharacter("Leroy", Sidestep.SSL),
+    createCharacter("Lidia", Sidestep.SSL),
     createCharacter("Lili", Sidestep.SSL),
     createCharacter("Nina", Sidestep.SSR),
     createCharacter("Paul", Sidestep.SSR),
