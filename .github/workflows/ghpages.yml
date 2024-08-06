@@ -3,9 +3,9 @@ run-name: Add pages
 on: [push]
 jobs:
   Pages:
-    runs-on: node:latest
+    runs-on: ubuntu:latest
     steps:
-      - run: apt-get update -y && apt-get install -y libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb
+      - run: apt-get update -y && apt-get install -y nodejs libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb
       - run: npm install && npm run build
       - name: Setup Pages
         if: github.ref == 'refs/heads/main'
