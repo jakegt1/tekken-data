@@ -1,0 +1,21 @@
+name: Pages
+run-name: Add pages
+on: [push]
+jobs:
+  Pages:
+    runs-on: node:latest
+    steps:
+      - run: apt-get update -y && apt-get install -y libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb
+      - run: npm install && npm run build
+      - name: Setup Pages
+        if: github.ref == 'refs/heads/main'
+        uses: actions/configure-pages@v5
+      - name: Upload Artifact
+        if: github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # location of the coverage artifacts
+          path: "./dist"
+
+
+
