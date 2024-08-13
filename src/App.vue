@@ -5,7 +5,7 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <RouterLink class="navbar-item" active-class="active" to="/">Home</RouterLink>
+      <RouterLink class="navbar-item" active-class="active" to="/">Tekken 8 Sidesteps</RouterLink>
     </div>
   </nav>
 
