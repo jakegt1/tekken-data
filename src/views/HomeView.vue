@@ -1,10 +1,16 @@
 <script setup lang="ts">
 import { Sidestep, data, type TekkenCharacter } from '@/lib/data';
 import { onMounted, ref, type Ref, computed, type ComputedRef, type VNodeRef } from 'vue';
+import fuzzysort from 'fuzzysort';
 
 const filter: Ref<string> = ref("");
 const characters: ComputedRef<TekkenCharacter[]> = computed(() => {
-  return data.characters.filter((character) => character.name.toLowerCase().startsWith(filter.value.toLowerCase()));
+  if(filter.value === "") {
+    return data.characters;
+  } else {
+    const results = fuzzysort.go(filter.value, data.characters, {key: 'name'});
+    return results.map((res) => res.obj);
+  }
 });
 
 const input: VNodeRef = ref(null);
